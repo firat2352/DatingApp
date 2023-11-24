@@ -24,17 +24,17 @@ builder.Services.AddIdentityServices(builder.Configuration);
 // builder.Services.AddCors();
 // builder.Services.AddScoped<ITokenService,TokenService>(); moved to AppExtensions
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
-            AddJwtBearer(options =>
-            {
-                options.TokenValidationParameters = new TokenValidationParameters //how to validate the token for API
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
-                };
-            });
+// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme). //moved to IdentityServiceExtension
+//             AddJwtBearer(options =>
+//             {
+//                 options.TokenValidationParameters = new TokenValidationParameters //how to validate the token for API
+//                 {
+//                     ValidateIssuerSigningKey = true,
+//                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),
+//                     ValidateIssuer = false,
+//                     ValidateAudience = false
+//                 };
+//             });
 
 var app = builder.Build();
 
