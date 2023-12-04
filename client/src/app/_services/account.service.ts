@@ -18,7 +18,6 @@ export class AccountService {
 
 setCurrentUser(user: User){
   this.currentUserSource.next(user);
-
 }
 
 login(model: any) {
@@ -27,7 +26,7 @@ login(model: any) {
       const user = response;
       if(user){
         localStorage.setItem('user',JSON.stringify(user));
-        this.currentUserSource.next(user); //giriş yapmışssa mevcut 
+        this.currentUserSource.next(user); //giriş yapmışsa mevcut 
       }
     })
   );
