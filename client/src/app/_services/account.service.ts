@@ -20,6 +20,17 @@ setCurrentUser(user: User){
   this.currentUserSource.next(user);
 }
 
+register(model : any){
+return this.http.post<User>(this.baseUrl + 'account/register',model).pipe(
+  map(user =>{
+    if(user){
+      localStorage.setItem('user',JSON.stringify(user));
+    }
+  })
+)
+}
+
+
 login(model: any) {
   return this.http.post<User>(this.baseUrl + 'account/login',model).pipe(
     map((response: User) => {
