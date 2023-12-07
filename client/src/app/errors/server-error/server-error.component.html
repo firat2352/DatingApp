@@ -1,0 +1,15 @@
+<h4>server error - refresh the page</h4>
+
+<ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weight-bold">Note: If you are seeing this then angular is probably not to blame</p>
+    <p>What to do next</p>
+    <ol>
+        <li> check the failing request in the network tab</li>
+        <li>Examine the request URL - what API endpoint are you requesting?</li>
+        <li>Reproduce the error in Postman - if we get the same error then Angular is not the problem</li>
+    </ol>
+    <code class="mt-5" style="background-color: whitesmoke;">
+        {{error.details}}
+    </code>
+</ng-container>
