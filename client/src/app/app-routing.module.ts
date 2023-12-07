@@ -6,6 +6,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { authGuard } from './_guards/auth.guard';
+import { TestErrorComponent } from './erros/test-error/test-error.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'members/:id', component:MemberDetailComponent},
   {path:'lists', component:ListsComponent},
   {path:'messages', component:MessagesComponent},
+  {path:'errors', component:TestErrorComponent},
   {path:'**', component:HomeComponent,pathMatch:'full'}, //listede olmayanlar için routing
 ];
 
